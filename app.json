@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "DocScanner",
+    "slug": "doc-scanner-app",
+    "version": "1.0.0",
+    "platforms": ["android"],
+    "android": {
+      "package": "com.docscanner.app",
+      "permissions": ["CAMERA", "READ_MEDIA_IMAGES"]
+    }
+  }
+}
