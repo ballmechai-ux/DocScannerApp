@@ -4,6 +4,9 @@
     "slug": "docscannerapp",
     "version": "1.0.0",
     "platforms": ["android"],
+    "splash": {
+      "backgroundColor": "#0a0f1e"
+    },
     "android": {
       "package": "com.docscanner.app",
       "permissions": ["CAMERA", "READ_MEDIA_IMAGES"]
