@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "DocScanner",
-    "slug": "doc-scanner-app",
+    "slug": "docscannerapp",
     "version": "1.0.0",
     "platforms": ["android"],
     "android": {
