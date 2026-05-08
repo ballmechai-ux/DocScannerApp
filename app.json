@@ -7,6 +7,11 @@
     "android": {
       "package": "com.docscanner.app",
       "permissions": ["CAMERA", "READ_MEDIA_IMAGES"]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6b7b02ba-c750-4fbc-9725-fd04a7c646a6"
+      }
     }
   }
 }
