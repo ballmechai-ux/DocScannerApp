@@ -14,10 +14,21 @@ jobs:
         run: npm install -g eas-cli
       - name: Install dependencies
         run: npm install
-      - name: Create Keystore
-        run: keytool -genkey -v -keystore keystore.jks -alias key0 -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=DocScanner,OU=App,O=App,L=Bangkok,S=Bangkok,C=TH" -storepass android -keypass android
-      - name: Create credentials.json
-        run: echo '{"android":{"keystore":{"keystorePath":"keystore.jks","keystorePassword":"android","keyAlias":"key0","keyPassword":"android"}}}' > credentials.json
+      - name: Create Keystore and credentials
+        run: |
+          keytool -genkey -v -keystore keystore.jks -alias key0 -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=DocScanner,OU=App,O=App,L=Bangkok,S=Bangkok,C=TH" -storepass android -keypass android
+          cat > credentials.json << 'EOF'
+          {
+            "android": {
+              "keystore": {
+                "keystorePath": "keystore.jks",
+                "keystorePassword": "android",
+                "keyAlias": "key0",
+                "keyPassword": "android"
+              }
+            }
+          }
+          EOF
       - name: Build APK
         run: eas build --platform android --profile production --non-interactive --no-wait
         env:
